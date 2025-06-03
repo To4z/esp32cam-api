@@ -20,6 +20,9 @@ def detect_plate():
 
     plates = detect_plates_from_image(img)
     return jsonify({'plates': plates})
+import os
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
+    port = int(os.environ.get('PORT', 8000))
+    app.run(host='0.0.0.0', port=port)
+
